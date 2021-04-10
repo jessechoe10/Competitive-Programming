@@ -21,7 +21,8 @@ using sl = set<ll>;
 #define sorc(x, cmp) sort(all(x), cmp)
 #define dbg(x) for(auto& a: x) cout << a << " "
 #define print(x) cout << x << endl
-#define trav(x) for(auto& a: x)
+#define trav(a, x) for(auto& a: x)
+#define endl print("")
 
 // Binary search on the answer for the smallest value of x
 
@@ -52,12 +53,28 @@ ll binarySearch2(ll l, ll r, bool works(ll x)){
             r = m-1;
         }
     }
+    return ans;
 }
 
 void solve(int t){
-
+    int n; cin >> n;
+    mp f;
+    for(int i=0; i<n; i++){
+        ll a; cin >> a;
+        f[a]++;
+    }
+    vl freq;
+    trav(a, f){
+        freq.push_back(a.second);
+    }
+    sor(freq);
+    dbg(freq);
+    endl;
 }
 
 int main(){
-    cout << "Hello World" << endl;
+    int t; cin >> t;
+    for(int i=0; i<t; i++){
+        solve(i);
+    }
 }
