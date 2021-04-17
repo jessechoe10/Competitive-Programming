@@ -1,2 +1,2 @@
 # Competitive-Programming
-Hello!
+https://github.com/jessechoe10/CP/tree/master
