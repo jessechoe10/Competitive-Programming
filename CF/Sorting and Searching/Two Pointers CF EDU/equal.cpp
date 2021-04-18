@@ -1,3 +1,5 @@
+// My solution didn't use 2P but still passed lol.
+
 #include <bits/stdc++.h>
 
 using namespace std;
