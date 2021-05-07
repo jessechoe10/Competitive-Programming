@@ -27,6 +27,14 @@ using sl = set<ll>;
 #define lb(a, x) lower_bound(all(a), x) - begin(a)
 #define FASTIO cin.tie(0)->sync_with_stdio(0)
 
+void solve(int tc){
+
+}
+
 int main(){
   	FASTIO;
+//     int t; cin >> t;
+//     for(int i = 1; i <= t; i++){
+//         solve(i);
+//     }
 }
