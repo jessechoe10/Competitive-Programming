@@ -16,7 +16,7 @@ using ll = long long;
 struct segmin {
 	
 	int size; // Number of nodes in the tree
-	vector<ll> mins; // Stores the segment sums
+	vector<ll> mins; // Stores the segment mins
 	void init(int n){
 		size = 1;
 		// Uses the binary heap implementation of a binary tree
