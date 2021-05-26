@@ -1,20 +1,29 @@
+// Problem Link: https://codeforces.com/edu/course/2/lesson/4/1/practice/contest/273169/problem/A
+// Video Solution: https://codeforces.com/edu/course/2/lesson/4/1
+
+/*
+	YoRepi7's Solution:
+
+	I have none. The official solution linked (above) should explain the logic/implementation well.
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
 using ll = long long;
 
 struct segsum {
-    
+	
 	int size; // Number of nodes in the tree
 	vector<ll> sums; // Stores the segment sums
-    
+	
 	void init(int n){
 		size = 1;
 		// Uses the binary heap implementation of a binary tree
 		while(size < n) size *= 2;
 		sums.assign(2 * size, 0LL);
 	}
-    
+	
 	void update(int i, int v, int root, int l, int r){
 		if(r - l == 1){
 			sums[root] = v; // Update the element at i with v
@@ -32,17 +41,17 @@ struct segsum {
 		// Update the sum
 		sums[root] = sums[2 * root + 1] + sums[2 * root + 2];
 	}
-    
+	
 	void update(int i, int v){
 		update(i, v, 0, 0, size);
 	}
-    
+	
 	ll sum(int l, int r, int root, int curL, int curR){
 		// Check if the current sum is out of the range of the current segment
 		if(curL >= r || l >= curR){
-			return 0;
+			return 0; // Set the rest of the elements to 0
 		}
-        // Check if the current sum is completely inside the current segment
+		// Check if the current sum is completely inside the current segment
 		if(curL >= l && curR <= r){
 			return sums[root];
 		}
@@ -55,7 +64,7 @@ struct segsum {
 	ll sum(int l, int r){
 		return sum(l, r, 0, 0, size);
 	}
-    
+	
 };
 
 int main(){
