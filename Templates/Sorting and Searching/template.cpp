@@ -27,6 +27,29 @@ using sl = set<ll>;
 #define lb(a, x) lower_bound(all(a), x) - begin(a)
 #define FASTIO cin.tie(0)->sync_with_stdio(0)
 
+struct segtree {
+	
+	int size; // This represents the number of nodes in
+	vector<ll> segtree; // Stores the segment tree
+	
+	void init(int n){
+		// Initialize the segment tree by finding the size and setting each node to a default value (say, 0).
+	}
+	void update(int i, int v, int root, int l, int r){
+		// Update a given element of the tree and do that for all of the nodes connected to that
+	}
+	void update(int i, int v){
+		update(i, v, 0, 0, size);
+	}
+	ll operation(int l, int r, int root, int curL, int curR){
+		// For a given associative operation, find the operation applied to the range [l, r]
+	}
+	ll operation(int l, int r){
+		return operation(l, r, 0, 0, size);
+	}
+	
+};
+
 void solve(int tc){
           
 }
