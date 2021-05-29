@@ -19,14 +19,14 @@ bool works(ll time){
         if(rem >= arr[i].t * arr[i].d){
             rem = arr[i].t * arr[i].d;
         }
-        ll balloons = (totIntervals * arr[i].d) + (rem / arr[i].t);
-        res += balloons;
+        ll totDist = (totIntervals * arr[i].d) + (rem / arr[i].t);
+        res += totDist;
     }
     // Check if the total distance traveled by all cows is at least M
     return res >= m;
 }
 
-void balloons(ll time){
+void calcDist(ll time){
     ll cur = m;
     for(int i=0; i<n; i++){
         ll intervals = (arr[i].t * arr[i].d + arr[i].w);
@@ -69,5 +69,5 @@ int main(){
         }
     }
     cout << ans << endl;
-    balloons(ans);
+    calcDist(ans);
 }
